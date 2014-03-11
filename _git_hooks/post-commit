@@ -1,0 +1,4 @@
+#!/bin/sh
+.git/hooks/ctags >/dev/null 2>&1 &
+# rsync -raz _site/ jbaumy:~/Dropbox/jbaumy.com/testing
+jekyll build --config _config_local.yml -d ~/webserver/blog

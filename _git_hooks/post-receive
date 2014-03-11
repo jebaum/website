@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# only use this on the server
+
+GIT_REPO=$HOME/jekyll.git
+TMP_GIT_CLONE=/tmp/jekyll_repo
+PUBLIC_WWW=/home/james/Dropbox/jbaumy.com/testing
+JEKYLL_PATH=/home/james/.gem/ruby/2.1.0/bin/jekyll
+
+git clone $GIT_REPO $TMP_GIT_CLONE
+$JEKYLL_PATH build -s $TMP_GIT_CLONE -d $PUBLIC_WWW
+rm -Rf $TMP_GIT_CLONE
+exit
